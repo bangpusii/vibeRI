@@ -59,7 +59,7 @@ def save_event(interest, title, description, event_date, location):
 	interest_id = connection.execute('SELECT interest_id FROM interests WHERE interest = ?',(interest,)).fetchone()
 	connection.execute('''
 		INSERT INTO events (event_id, interest_id, title, description, event_date, location)
-		VALUES (?,?,?,?,?,?,?)''',
+		VALUES (?,?,?,?,?,?)''',
 		(event_id, interest_id[0], title, description, event_date, location)
 	)
 	connection.commit()
