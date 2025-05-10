@@ -1,0 +1,222 @@
+body {
+	font-family: 'Comic Sans MS', cursive;
+	background: #fffaa0;
+	min-height: 100vh;    
+	background-image: url('empty_sky_grass.jpg');
+    background-size: cover; /* Optional: to ensure the image covers the entire page */
+    background-repeat: no-repeat; /* Optional: to prevent the image from tiling */
+    background-attachment: fixed; /* Optional: to keep the image stationary while scrolling */
+  
+}
+
+nav {
+	background: rgba(255, 250, 160) /*rgba(243, 228, 245)*/ ;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+nav ul {
+	width: 100%;
+	list-style: none;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+nav li {
+	height: 50px;
+}
+
+nav a {
+	height: 100%;
+	padding: 0 30px;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: black;
+}
+
+nav a:hover {
+	background-color: rgba(161, 143, 94, 0.8);
+}
+
+nav li:first-child {
+	margin-right: auto;
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 250px;
+	z-index: 999;
+	background: rgba(255, 250, 160, 0.8) /*rgba(243, 228, 245,0.8)*/ ;
+	backdrop-filter: blur(10px);
+	box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.sidebar li {
+	width: 100%;
+}
+
+.sidebar a {
+	width: 100%;
+}
+
+.sidenav {
+	height: 80%; /* Full height */
+	width: 300px; /* Sidebar width */
+	position: absolute; /* Fixed position */
+	z-index: 1; /* Ensure it stays on top */
+	left: 0; /* Stick to the left */
+	border-right: 2px solid black;
+	overflow-x: hidden; /* Disable horizontal scrolling */
+	padding: 10px 0px;
+}
+
+.main {
+  margin-left: 300px; /* Same as sidebar width */
+  padding: 10px; /* Add padding to the main content */
+}
+
+.home {
+	margin: 10px 60px;
+	color: pink;
+}
+
+
+.welcome {
+	margin: 75px 50px 20px 50px;
+	padding: 10px 20px;
+	display: flex;
+	background: #e0f0e3;
+	border: 2px dotted black;
+	border-radius: 50px;
+}
+
+p {
+	margin: 0px 55px;
+	padding: 0 10px;
+}
+
+.event {
+	margin: 20px 100px;
+	padding: 20px 40px;
+	display: grid;
+	align-items: center;
+	border: 2px dotted black;
+	border-radius: 50px;
+	background: rgba(256, 256, 256, 0.2);
+}
+
+table {
+	margin: 20px 75px;
+	padding: 10px 10px;
+	border: 1px solid black;
+	display: flex;
+	background: rgba(214,233,255);
+}
+
+.picture {
+	width: 300px;
+}
+
+.position {
+	justify-content: center;
+	text-align: center;
+	margin: 80px 50px;
+}
+
+.login {
+	margin: 20px 35px;
+	background: rgba(255, 192, 203, 0.85);
+	border: 2px solid black;
+	border-radius: 18px;
+	text-align: left;
+	padding: 35px 35px;
+	display: inline-flex;
+}
+
+.inputs {
+	width:280px; 
+	height:30px; 
+	background-color: rgba(255, 192, 203, 0);
+	border: none; 
+	border-bottom: 2px solid;
+}
+
+.heading {
+	margin: 70px 50px 20px 50px;
+	padding: 10px 20px;
+	border-bottom: 2px solid black;
+}
+
+.button {
+	margin: 3px;
+	padding: 3px 4px;
+	border: 1px solid black;
+	border-radius: 3px;
+	background: rgba(255, 192, 203, 0.85);
+	display: inline-flex;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+  color: white; /* Change hover color */
+}
+
+.submitbutton {
+	margin: 3px;
+	float:right; 
+	font-size: 16px;
+    font-family: "Comic Sans MS", cursive; 
+	background: rgba(255, 250, 160, 0.85); 
+	border-radius: 3px; 
+	border: 1px solid black; 
+	padding: 3px 4px;
+}
+
+.submitbutton:hover {
+	color: rgba(189, 183, 107, 0.85);
+}
+
+.interest {
+	margin: 3px 50px;
+	padding: 5px 10px;
+	display: grid;
+}
+
+.navbar {
+	width: 100%;
+	overflow: hidden;
+}
+
+.navbar ul {
+	width: 96%;
+	list-style: none;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.navbar li:first-child {
+	margin-right: auto;
+}
+
+.details {
+	width: 280px;
+	height: 30px;
+}
+	

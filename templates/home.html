@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}home{% endblock %}
+
+{% block content %}
+    <h2 class='welcome'>welcome, {{ session.fullname }}!</h2>
+	<div class="sidenav">
+		{% if marker_interest %}
+			<h3 class='home'><u>your interests...</u></h3>
+			{% for interest in interests %}
+				<a href='/interest/?id={{ interest }}' class='interest'>☆ {{ interest }}</a>
+			{% endfor %}
+		{% else %} 
+			<h3 class='home'><u>find an interest you like!</u></h3>
+			{% for interest in interests %}
+				<a href='/interest/?id={{ interest }}' class='interest'>☆ {{ interest }}</a>
+			{% endfor %}
+		{% endif %}
+	</div>
+	<div class='main'>
+		{% if marker_event %}
+		<h3 class='home'><u>upcoming events for you...</u></h3>
+			{% for event in events %}
+				<a href='/event/?id={{ event }}' class='event'>☆ {{ event }}</a>
+			{% endfor %}
+		{% else %}
+			<h3 class='home'><u>browse through all the events we have!</u></h3>
+			{% for event in events %}
+					<a href='/event/?id={{ event }}' class='event'>☆ {{ event }}</a>
+			{% endfor %}
+		{% endif %}
+	</div>
+{% endblock %}

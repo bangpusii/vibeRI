@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ session.event }}{% endblock %}
+
+{% block content %} 
+	<h2 class='heading'>{{ session.event }}</h2>
+	<div class='position'>
+	{% for message in get_flashed_messages() %}
+		<p>{{ message }}</p>
+	{% endfor %}
+		<div class='login'>
+			<form action='{{ url_for("event") }}' method='post'>
+				interest: {{ interest }}<br><br>
+			{% if info[1] %}
+				description: {{ info[1] }}<br><br>
+			{% else %}
+				description: (no description)<br><br>
+			{% endif %}
+			date: {{ info[2] }}<br><br>
+			location: {{ info[3] }}<br><br>
+				<input class='submitbutton' type='submit' value='join event'>
+			</form>
+		</div>
+	</div>
+{% endblock %}

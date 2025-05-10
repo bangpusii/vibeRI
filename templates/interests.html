@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}interests{% endblock %}
+
+{% block content %}
+	<h2 class='heading'>list of interests!</h2>
+	<p style='text-align:right;'><a class='button' href='{{ url_for("createinterest") }}'>create a new interest :P</a></p>
+	{% for message in get_flashed_messages() %}
+		<p>{{ message }}</p>
+	{% endfor %}
+	{% if info %}
+		{% for i in info %}
+			<div class='event'>
+				<a href='/interest/?id={{ i[1] }}'><b>{{  i[1] }}!</b></a>
+				{% if i[2] %}
+					☆ {{ i[2] }}</p>
+				{% else %}
+					☆ (no description)</p>
+				{% endif %}
+			</div>
+		{% endfor %}
+	{% else %}
+		<p class='position'> no interest yet... ): create an interest now!</p>
+	{% endif %}
+{% endblock %}

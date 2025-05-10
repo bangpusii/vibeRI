@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<title>Log in</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+	<div class='position'>
+	<h2>Log in to VibeRI!</h2>
+	{% for message in get_flashed_messages() %}
+		<p style='color:red;'>{{ message }}</p>
+	{% endfor %}
+	<div class='login'>
+	<form action='{{ url_for("login") }}' method='post'>
+	
+		<label for='email'>Email:</label><br>
+		<input class='inputs' type='email' id='email' name='email' required><br><br>
+		
+		<label for='password'>Password:</label><br>
+		<input class='inputs' type='password' id='password' name='password' required><br><br>
+		
+		<input class='submitbutton' type='submit' value='Sign in'>
+	
+	</form>
+	</div>
+	<p>New to VibeRI? <a href='{{ url_for("signup") }}' style='color:blue; text-decoration: underline;'>Sign up!</a></p>
+	</div>
+</body>
+</html>

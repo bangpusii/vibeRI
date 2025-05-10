@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}events{% endblock %}
+
+{% block content %}
+	{% for message in get_flashed_messages() %}
+		<p>{{ message }}</p>
+	{% endfor %}
+	<h2 class='heading'>list of events!</h2>
+	<p style='text-align:right;'><a class='button' href='{{ url_for("createevent") }}'>create a new event :P</a></p>
+	
+	{% if info %}
+		{% for i in info %}
+			<div class='event'>
+				<a href='/event/?id={{ i[2] }}'><b>{{  i[2] }}!</b></a>
+				{% if i[3] %}
+					☆ {{ i[3] }}
+				{% else %}
+					☆ (no description)
+				{% endif %}
+			</div>
+		{% endfor %}
+	{% else %}
+		<p class='position'> no event for now... ):</p>
+	{% endif %}
+{% endblock %}

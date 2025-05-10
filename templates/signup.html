@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<title>Sign up</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+	<div class='position'>
+	<h2>Sign up to be a part of VibeRI family!</h2>
+	{% for message in get_flashed_messages() %}
+		<p style='color:red;'>{{ message }}</p>
+	{% endfor %}
+	<div class='login'>
+	<form action='{{ url_for("confirmation") }}' method='post'>
+		<label for='fullname'>Full Name:</label><br>
+		<input class='inputs' type='text' id='fullname' name='fullname' placeholder='e.g. John Tan Xiao Ming' required><br><br>
+		
+		<label for='user_class'>Class:</label><br>
+		<input class='inputs' type='text' id='user_class' name='user_class' placeholder='e.g. 12S09A' required><br><br>
+        
+		<label for='phone'>Phone Number:</label><br>
+		<input class='inputs' type='tel' id='phone' name='phone' placeholder='e.g. 81234567' required><br><br>
+		
+		<label for='email'>Email:</label><br>
+		<input class='inputs' type='email' id='email' name='email' placeholder='e.g. johntan@example.com' required><br><br>
+		
+		<label for='password'>Password:</label><br>
+		<input class='inputs' type='password' id='password' name='password' placeholder='Enter a strong password!' required><br><br>
+		
+		<input class='submitbutton' type='submit' value='Sign up'>
+
+	</form>
+	</div>
+	<p>Already have an account? <a href='{{ url_for("login") }}' style='color:blue; text-decoration: underline;'>Log in!</a></p>
+	</div>
+</body>
+</html>
