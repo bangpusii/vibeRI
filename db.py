@@ -12,7 +12,7 @@ def init_db():
 def save_user(fullname, user_class, phone, email, password):
 	connection = sqlite3.connect('viberi.db')
 	count = connection.execute('SELECT MAX(user_id) FROM users').fetchone()
-	if count:
+	if count[0]:
 		user_id = int(count[0])+1
 	else:
 		user_id = 1
@@ -27,7 +27,7 @@ def save_user(fullname, user_class, phone, email, password):
 def save_interest(interest, description):
 	connection = sqlite3.connect('viberi.db')
 	count = connection.execute('SELECT COUNT(*) FROM interests').fetchone()
-	if count:
+	if count[0]:
 		interest_id = int(count[0])+1
 	else:
 		interest_id = 1
@@ -52,7 +52,7 @@ def save_user_interest(user_id, interest_id):
 def save_event(interest, title, description, event_date, location):
 	connection = sqlite3.connect('viberi.db')
 	count = connection.execute('SELECT COUNT(*) FROM events').fetchone()
-	if count:
+	if count[0]:
 		event_id = int(count[0])+1
 	else:
 		event_id = 1
